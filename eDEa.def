@@ -1,0 +1,8 @@
+// DE parameters
+{ "-F", "scaling factor",
+	OPTION_REAL, &DE_F },
+{ "-CR", "crossover rate",
+	OPTION_REAL, &DE_CR },
+
+{ "-epop", "effective popsize",
+	OPTION_INTEGER, &EffectivePopsize },

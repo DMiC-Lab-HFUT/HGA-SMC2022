@@ -1,0 +1,63 @@
+{ "eOPT", "options for Evolutionary Optimizer" },
+
+{ "-p", "problem ID",
+	OPTION_INTEGER, &Problem },
+{ "-P", "show all problems",
+	OPTION_FLAG, &show_problems },
+
+/* problems */
+{ "-len",  "length of chromosome",
+	OPTION_INTEGER, &Length },
+{ "-lower", "lower bound of an element in initial pop",
+	OPTION_REAL, &Lower },
+{ "-upper",  "upper bound of an element in initial pop",
+	OPTION_REAL, &Upper },
+#ifndef MINIMIZATION
+{ "-max", "maximization",
+	OPTION_FLAG, &MaximizationFlag },
+#endif
+#ifdef SUCCESS_CHECK
+{ "-success", "difference between optimal solution and successful solution",
+	OPTION_REAL, &Success },
+#endif
+#ifdef CONSTRAINTS
+{ "-delta", "allowable error for equality constraints",
+	OPTION_REAL, &Delta },
+#ifndef EVALUATE_FC
+{ "-evalf", "always evaluate function value",
+	OPTION_FLAG, &EvalFFlag },
+#endif
+#endif
+
+/* experiments */
+{ "-exp", "number of experiments/runs",
+	OPTION_INTEGER, &Experiments },
+{ "-gen", "maximum number of generations",
+	OPTION_INTEGER, &Generations },
+{ "-eval", "maximum number of evaluations",
+	OPTION_INTEGER, &Evaluations },
+{ "-pop",  "population size",
+	OPTION_INTEGER, &Popsize },
+#ifdef SUCCESS_CHECK
+{ "-stop", "stop when successful solution is found",
+	OPTION_FLAG, &StopFlag },
+#endif
+
+/* params for information */
+{ "-report", "display information in each specified generation",
+	OPTION_INTEGER, &Report },
+{ "-long", "display detailed information in each specified generation",
+	OPTION_INTEGER, &LongReport },
+
+{ "-h", "show help message",
+	OPTION_FLAG, &show_help },
+{ "-v", "show version",
+	OPTION_FLAG, &show_version },
+
+/* params for extension */
+{ "-real", "a real valued parameter",
+	OPTION_REAL, &Real },
+{ "-int", "an integer valued parameter",
+	OPTION_INTEGER, &Integer },
+{ "-str",  "a string valued parameter",
+	OPTION_STRING, &String },

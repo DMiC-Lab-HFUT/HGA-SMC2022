@@ -1,0 +1,15 @@
+// DE parameters
+{ "-F", "scaling factor",
+	OPTION_REAL, &DE_F },
+{ "-CR", "crossover rate",
+	OPTION_REAL, &DE_CR },
+// base vector
+{ "-best", "use the best individual as a base vector",
+	OPTION_FLAG, &DEBestFlag },
+// crossover
+{ "-bin", "binomial crossover",
+	OPTION_FLAG, &DEBinomialCrossoverFlag },
+
+// swap population
+{ "-swap", "enable population swap",
+	OPTION_FLAG, &SwapPopulationFlag },
